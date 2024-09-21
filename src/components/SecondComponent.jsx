@@ -1,4 +1,4 @@
-export const SecondComponent = () => {
+const SecondComponent = () => {
 
     const books = [
         "Libro 1",
@@ -16,24 +16,18 @@ export const SecondComponent = () => {
         <>
             <h1>Second Component</h1>
             <div>
-                {/* <ul>
-                    <li> {books[0]} </li>
-                    <li> {books[1]} </li>
-                    <li> {books[2]} </li>
-                    <li> {books[3]} </li>
-                    <li> {books[4]} </li>
-                    <li> {books[5]} </li>
-                    <li> {books[6]} </li>
-                    <li> {books[7]} </li>
-                </ul> */}
                 <ul>
-                    {
+                    {books.length >= 1 ? (
                         books.map((book, index) => {
                             return <li key={index}>{book}</li>;
                         })
-                    }
+                    ) : (
+                        <p>No hay libros</p>
+                    )}
                 </ul>
             </div>
         </>
     )
 }
+
+export default SecondComponent
